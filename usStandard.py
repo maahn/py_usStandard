@@ -3,7 +3,10 @@
 # M.Maahn, IGMK 2012
 
 import numpy as np
-import collections
+try:
+  from collections.abc import Iterable
+except ImportError:
+  from collections import Iterable
 import usStandardAtmosphere
 
    
@@ -21,13 +24,13 @@ def usStandard(height):
   """                                                          
 
   #check whether height is float or array:
-  if isinstance(height, collections.Iterable):
+  if isinstance(height, Iterable):
     density = np.ones_like(height,dtype=float)
     pressure = np.ones_like(height,dtype=float)
     temperature = np.ones_like(height,dtype=float)    
     for ii,hh in enumerate(height):
       #Fortran processes only first entry of vector, so make sure it is not a vector
-      assert not isinstance(hh, collections.Iterable)
+      assert not isinstance(hh, Iterable)
       density[ii], pressure[ii], temperature[ii] = usStandardAtmosphere.atmosphere(hh/1000.)
   else:
     density, pressure, temperature = usStandardAtmosphere.atmosphere(height/1000.)
