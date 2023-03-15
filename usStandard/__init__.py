@@ -7,7 +7,7 @@ try:
   from collections.abc import Iterable
 except ImportError:
   from collections import Iterable
-import usStandardAtmosphere
+from .usStandardAtmosphere import atmosphere
 
    
 
@@ -31,9 +31,9 @@ def usStandard(height):
     for ii,hh in enumerate(height):
       #Fortran processes only first entry of vector, so make sure it is not a vector
       assert not isinstance(hh, Iterable)
-      density[ii], pressure[ii], temperature[ii] = usStandardAtmosphere.atmosphere(hh/1000.)
+      density[ii], pressure[ii], temperature[ii] = atmosphere(hh/1000.)
   else:
-    density, pressure, temperature = usStandardAtmosphere.atmosphere(height/1000.)
+    density, pressure, temperature = atmosphere(height/1000.)
     
   #results of Fortran programm are normed to standard conditions:
   density = density * 1.2250

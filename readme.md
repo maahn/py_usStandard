@@ -5,12 +5,11 @@ Should work with Linux and Mac OS X. Requires numpy/f2py to be installed.
 
 ## Installation
 
-use make
+use standard python installation, i.e.
 
-    make
+    pip install .
 
-and 
+or 
 
-    make install
+    python setup.py install
 
-will copy the files to ~/lib/python. Make sure the path is in your $PYTHONPATH
