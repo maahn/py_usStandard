@@ -1,0 +1,63 @@
+[build-system]
+build-backend = 'mesonpy'
+requires = [
+         "wheel",
+         "meson-python",#>=0.8.0",
+#         "setuptools<60.0",  # Do not increase, 60.0 enables vendored distutils
+#         "Cython",#>=0.29.21",
+         "python-dev-tools",
+#         "oldest-supported-numpy; python_version>'3.9'",
+         "numpy",#; python_version<='3.9'"
+]
+
+[project]
+name = "usStandard"
+license = {file = "LICENSE.txt"}
+version = "2.1.1"
+description = "Wrapper to usStandardAtmosphere.f90 code by Ralph Carmichael"
+long_description = "Python code that computes pressure temperature and density of the standard US atmosphere profile"
+authors = [{name = "Pamtra team", email = "meteo-pamtra@uni-koeln.de"}]
+maintainers = [
+    {name = "Max Maahn"},
+    {name = "Davide Ori"},
+]
+requires-python = ">=3.7" # TODO check it
+dependencies = [
+    # TODO: update to "pin-compatible" once possible, see
+    # https://github.com/FFY00/meson-python/issues/29
+    "numpy>=1.19.5", ## DO: copied from apexpy, not sure if it is still relevant
+    "scipy",
+]
+readme = "readme.md"
+keywords = ["atmosphere",
+            "US standard",
+	    "thermodynamic profile",
+	    ]
+classifiers = [
+    "Development Status :: 4 - Beta", # TODO maybe switch to 5 Production/Stable
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Fortran",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Utilities",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+]
+# dynamic = ['version']
+
+#[project.optional-dependencies]
+#test = ["unittest",]
+#doc = ["sphinx>=1.3", "sphinx-rtd-theme"]
+
+[project.urls]
+source = 'https://github.com/maahn/py_usStandard.git'
+#documentation = "https://github.com/maahn/py_usStandard/wiki"
+#tracker = "https://github.com/maahn/py_usStandard/issues"
+#download = "https://github.com/maahn/py_usStandard/releases"
+
