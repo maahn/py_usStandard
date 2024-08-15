@@ -13,7 +13,7 @@ requires = [
 [project]
 name = "usStandard"
 license = {file = "LICENSE.txt"}
-version = "2.1.3"
+version = "2.1.4"
 description = "Wrapper to usStandardAtmosphere.f90 code by Ralph Carmichael"
 long_description = "Python code that computes pressure temperature and density of the standard US atmosphere profile"
 authors = [{name = "Pamtra team", email = "meteo-pamtra@uni-koeln.de"}]

@@ -1,6 +1,6 @@
 project( 'usStandard', 'c',
   # Note that the git commit hash cannot be added dynamically here
-  version: '2.1.3',
+  version: '2.1.4',
   license: 'GPL v3',
   meson_version: '>= 0.63.0',
   default_options: [
