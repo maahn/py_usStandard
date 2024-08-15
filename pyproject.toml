@@ -1,13 +1,13 @@
 [build-system]
 build-backend = 'mesonpy'
 requires = [
-         "wheel",
-         "meson-python",#>=0.8.0",
-#         "setuptools<60.0",  # Do not increase, 60.0 enables vendored distutils
-         "Cython",#>=0.29.21",
-#         "python-dev-tools",
+         "wheel", # TODO check if required
+         "meson-python",#>=0.8.0", 
+#         "setuptools<60.0",  # Do not increase, 60.0 enables vendored distutils # useless in this project
+         "Cython",#>=0.29.21", # TODO check if required
+#         "python-dev-tools",  # apparently not required by this project and also causing spurius errors
 #         "oldest-supported-numpy; python_version>'3.9'",
-         "numpy",#; python_version<='3.9'"
+         "numpy",#; python_version<='3.9'" TODO check if required
 ]
 
 [project]
@@ -25,8 +25,8 @@ requires-python = ">=3.7" # TODO check it
 dependencies = [
     # TODO: update to "pin-compatible" once possible, see
     # https://github.com/FFY00/meson-python/issues/29
-    "numpy>=1.19.5", ## DO: copied from apexpy, not sure if it is still relevant
-    "scipy",
+    "numpy>=1.19.5", ## TODO: copied from apexpy, not sure if it is relevant here
+    "scipy", # TODO souds like this can also be dropped
 ]
 readme = "readme.md"
 keywords = ["atmosphere",
